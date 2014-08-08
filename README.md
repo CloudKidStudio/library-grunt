@@ -75,6 +75,7 @@ Task | Description
 ---|---
 **default** | Builds the minified, debug and combined versions of the library
 **dev** | This watches source files and auto-rebuilds whenever there's a change
+**combine** | This builds the library in combine mode by simply concatinating all the files
 **clean-all** | Delete all generated build files and delete components directory
 **docs** | Generate the documentation (requires [CloudKidTheme](http://github.com/CloudKidStudio/CloudKidTheme)
 **docs-live** | Generate the documentation and commit it to _gh-pages_ branch of this the current Git repository
