@@ -54,6 +54,7 @@ scaffoldDir("dist");
 
 // Copy the required files
 scaffold("Gruntfile.js");
+scaffold("bower.json");
 scaffold("package.json");
 scaffold("build.json", null, function(){
 	scaffold("src/main.js");

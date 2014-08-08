@@ -35,7 +35,7 @@ Edit the **build.json** file to update the project name, output file name, URL, 
 
 Grunt Library Builder is designed to easily include define dependencies for your library.
 
-Modify the **bower.json** file to include additional libraries into your project. For more information about using Bower please visit the [website](http://bower.io). For instance, if you wanted to include [CreateJS](http://createjs.com), **bower.json** might look like this:
+Modify the **bower.json** file to include additional libraries into your project. For more information about using Bower please visit the [website](http://bower.io). For instance, if you wanted to include [CreateJS](http://createjs.com), **bower.json** might look like this. Note that the _version_ and _main_ fields are updated automatically from the **build.json**, no need to change these manually.
 
 ```js
 {
@@ -79,6 +79,7 @@ Task | Description
 **clean-all** | Delete all generated build files and delete components directory
 **docs** | Generate the documentation (requires [CloudKidTheme](http://github.com/CloudKidStudio/CloudKidTheme)
 **docs-live** | Generate the documentation and commit it to _gh-pages_ branch of this the current Git repository
+**update-bower-file** | Automatically updates the version and main fields in **bower.json**
 
 ## Build File
 
