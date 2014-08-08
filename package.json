@@ -2,14 +2,14 @@
 	"name": "grunt-library-builder",
 	"version": "0.0.2",
 	"description": "Tasks and scaffolding for a library project",
-	"main": "./libs/index.js",
+	"main": "./libs/grunt-library-builder.js",
 	"author": {
 		"name": "Matt Karl",
 		"email": "matt@cloudkid.com"
 	},
 	"scripts": {
-		"preinstall": "./scripts/install.js",
-		"postinstall" : "./scripts/build.js"
+		"preinstall": "./scripts/preinstall.js",
+		"postinstall" : "./scripts/postinstall.js"
 	},
 	"license": "MIT",
 	"repository": {
@@ -26,7 +26,8 @@
 		"load-grunt-config": "~0.13.0",
 		"grunt-contrib-yuidoc": "~0.5.2",
 		"grunt-gh-pages": "~0.9.1",
-		"underscore-contrib": "~0.3.0"
+		"underscore-contrib": "~0.3.0",
+		"prompt": "~0.2.13"
 	},
 	"readmeFilename": "README.md",
 	"bugs": {

@@ -2,7 +2,6 @@
 
 // The root library folder
 var base = "../../";
-
 var fs = require('fs');
 
 /**
@@ -40,7 +39,7 @@ function scaffold(file, content, callback)
 			}
 			fs.writeFile(base + file, content || fs.readFileSync("scaffold/" + file), function(){
 				console.log("  " + file + " ... added");
-				if (callback) callback();
+				if (callback) callback(base + file);
 			});
 		}
 	});
@@ -56,7 +55,10 @@ scaffoldDir("dist");
 scaffold("Gruntfile.js");
 scaffold("bower.json");
 scaffold("package.json");
-scaffold("build.json", null, function(){
+scaffold("build.json", null, function(file){
 	scaffold("src/main.js");
+
+	// Add a build the build file to let the post
+	fs.writeFileSync('.buildFile', file);
 });
 scaffold(".gitignore", "node_modules");
