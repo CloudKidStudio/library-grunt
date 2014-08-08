@@ -1,0 +1,10 @@
+{
+	"name" : "Library",
+	"version" : "0.0.1",
+	"description" : "",
+	"url" : "",
+	"output" : "library",
+	"main" : [
+		"src/main.js"
+	]
+}
