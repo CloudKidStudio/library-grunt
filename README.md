@@ -24,7 +24,7 @@ mkdir MyProject && cd MyProject
 The installation of the plugin requires installing Grunt first and then the plugin. This will create an empty project template structure which you can start to customize.
 
 ```shell
-npm install grunt CloudKidStudio/grunt-library-builder
+npm install grunt grunt-library-builder
 ```
 
 ### 3. Change Project Information
