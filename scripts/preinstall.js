@@ -45,20 +45,20 @@ function scaffold(file, content, callback)
 	});
 }
 
-console.log("Creating library scaffolding...\n");
-
-// Create the required folders
-scaffoldDir("src"); 
-scaffoldDir("dist"); 
-
-// Copy the required files
-scaffold("Gruntfile.js");
-scaffold("bower.json");
-scaffold("package.json");
+// Check for a build file first before installing everything
 scaffold("build.json", null, function(file){
+	
+	// Create the required folders
+	scaffoldDir("src"); 
+	scaffoldDir("dist"); 
+
+	// Copy the required files
+	scaffold("Gruntfile.js");
+	scaffold("bower.json");
+	scaffold("package.json");
 	scaffold("src/main.js");
+	scaffold(".gitignore", "node_modules");
 
 	// Add a build the build file to let the post
 	fs.writeFileSync('.buildFile', file);
 });
-scaffold(".gitignore", "node_modules");
