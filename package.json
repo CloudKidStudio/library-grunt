@@ -1,6 +1,6 @@
 {
 	"name": "grunt-library-builder",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "Tasks and scaffolding for a library project",
 	"main": "./libs/grunt-library-builder.js",
 	"author": {
@@ -29,6 +29,13 @@
 		"underscore-contrib": "~0.3.0",
 		"prompt": "~0.2.13"
 	},
+	"keywords": [
+		"gruntplugin",
+		"template",
+		"library",
+		"scaffolding",
+		"build"
+	],
 	"readmeFilename": "README.md",
 	"bugs": {
 		"url": "https://github.com/CloudKidStudio/grunt-library-builder/issues"
