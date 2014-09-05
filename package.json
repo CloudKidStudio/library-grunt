@@ -1,8 +1,8 @@
 {
 	"name": "grunt-library-builder",
-	"version": "0.0.3",
+	"version": "0.1.0",
 	"description": "Tasks and scaffolding for a library project",
-	"main": "./libs/grunt-library-builder.js",
+	"main": "./libs/index.js",
 	"author": {
 		"name": "Matt Karl",
 		"email": "matt@cloudkid.com"

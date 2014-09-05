@@ -79,7 +79,7 @@ Task | Description
 **clean-all** | Delete all generated build files and delete components directory
 **docs** | Generate the documentation (requires [CloudKidTheme](http://github.com/CloudKidStudio/CloudKidTheme)
 **docs-live** | Generate the documentation and commit it to _gh-pages_ branch of this the current Git repository
-**update-bower-file** | Automatically updates the version and main fields in **bower.json**
+**sync-version** | Automatically updates the version and main fields in **bower.json**
 
 ## Build File
 
@@ -126,25 +126,21 @@ Structure | Description
 **./Gruntfile.js** | Contains the Grunt automation tasks
 **./package.json** | The list of Node dependencies
 
-## Extending Gruntfile.js
+## Plugin Options
 
-The default **Gruntfile.js** can be extended easily to allow for custom tasks. Here's an example using [grunt-extend-config](https://www.npmjs.org/package/grunt-extend-config) to extend the `initConfig` in this plugin. 
+The Grunt Library Builder plugin can accept additional options. Here's an example to add additional arguments:
 
 ```js
 module.exports = function(grunt)
 {
-	// Default game builds
-	require('grunt-library-builder')(grunt);
-
-	// Include required tasks, should be installed
-	grunt.loadNpmTasks('grunt-extend-config');
-	grunt.loadNpmTasks('grunt-exec');
-
-	// Add additional tasks
-	grunt.extendConfig({
-		exec : {
-			echo_something: 'echo "This is something"'
-		}
+	var config = require('grunt-library-builder')(grunt, {
+		autoInit : false
 	});
+
+	grunt.initConfig(config);
 };
 ```
+
+### options.autoInit
+
+A _boolean_ defaults to true. If grunt.initConfig() is automatically called. 

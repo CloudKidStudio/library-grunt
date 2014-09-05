@@ -11,14 +11,11 @@ var fs = require('fs');
 */
 function scaffoldDir(dir)
 {
-	fs.exists(base + dir, function(exists){
-		if (!exists)
-		{
-			fs.mkdir(base + dir, function(){
-				console.log("  " + dir + " ... added");
-			});
-		}
-	});
+	if (!fs.existsSync(base + dir))
+	{
+		fs.mkdirSync(base + dir);
+		console.log("  " + dir + " ... added");
+	}
 }
 
 /**
@@ -45,19 +42,19 @@ function scaffold(file, content, callback)
 	});
 }
 
-// Check for a build file first before installing everything
-scaffold("build.json", null, function(file){
+// Only scaffold the project if no Gruntfile is available
+scaffold("Gruntfile.js", null, function(file){
 	
 	// Create the required folders
 	scaffoldDir("src"); 
 	scaffoldDir("dist"); 
 
 	// Copy the required files
-	scaffold("Gruntfile.js");
+	scaffold("build.json");
 	scaffold("bower.json");
 	scaffold("package.json");
 	scaffold("src/main.js");
-	scaffold(".gitignore", "node_modules");
+	scaffold(".gitignore", "node_modules\ndocs");
 
 	// Add a build the build file to let the post
 	fs.writeFileSync('.buildFile', file);

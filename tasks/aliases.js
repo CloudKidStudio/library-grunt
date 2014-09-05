@@ -10,7 +10,7 @@ module.exports = function(grunt)
 			'uglify:development',
 			'replace:development',
 			'combine',
-			'update-bower-file'
+			'sync-version'
 		]
 	);
 
@@ -36,18 +36,23 @@ module.exports = function(grunt)
 
 	grunt.registerTask(
 		'docs',
-		'Auto generate the documentation',
-		['clean:docs','yuidoc']
+		'Auto generate the documentation', [
+			'clean:docs',
+			'yuidoc'
+		]
 	);
 
 	grunt.registerTask(
 		'docs-live',
-		'Generate documentation and push to gh-pages branch',
-		['clean:docs', 'yuidoc', 'gh-pages']
+		'Generate documentation and push to gh-pages branch', [
+			'clean:docs',
+			'yuidoc',
+			'gh-pages'
+		]
 	);
 
 	grunt.registerTask(
-		'update-bower-file',
+		'sync-version',
 		'Update the bower file with the build version',
 		function()
 		{	

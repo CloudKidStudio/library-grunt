@@ -9,7 +9,7 @@ module.exports = function(grunt, options)
 	var _ = require('underscore-contrib');
 
 	// The name of the build file
-	var filename = options.cwd + '/build.json';
+	var filename = options.cwd + '/' + (options.buildFile || 'build.json');
 
 	// Check for build file
 	if (!grunt.file.exists(filename))
