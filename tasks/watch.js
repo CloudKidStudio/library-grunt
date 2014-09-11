@@ -10,9 +10,7 @@ module.exports = {
 			'<%= build.file %>'
 		],
 		tasks: [
-			'jshint', 
-			'uglify:development',
-			'replace:development',
+			'jshint',
 			'combine'
 		]
 	}

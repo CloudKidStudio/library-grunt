@@ -1,5 +1,5 @@
 module.exports = {
-	combine: {
+	development: {
 		src: ['<%= build.main %>'],
 		dest: '<%= distFolder %>/<%= build.output %>.js'
 	},

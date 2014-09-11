@@ -7,8 +7,6 @@ module.exports = function(grunt)
 			'jshint',
 			'uglify:release',
 			'replace:release',
-			'uglify:development',
-			'replace:development',
 			'combine',
 			'sync-version'
 		]
@@ -17,8 +15,8 @@ module.exports = function(grunt)
 	grunt.registerTask(
 		'combine',
 		'Builds a combined library file without minification', [
-			'concat:combine',
-			'replace:combine'
+			'concat:development',
+			'replace:development'
 		]
 	);
 
