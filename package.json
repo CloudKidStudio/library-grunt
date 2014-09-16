@@ -1,6 +1,6 @@
 {
 	"name": "grunt-library-builder",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "Tasks and scaffolding for a library project",
 	"main": "./libs/index.js",
 	"author": {
@@ -8,8 +8,8 @@
 		"email": "matt@cloudkid.com"
 	},
 	"scripts": {
-		"preinstall": "./scripts/preinstall.js",
-		"postinstall" : "./scripts/postinstall.js"
+		"preinstall": "node scripts/preinstall.js",
+		"postinstall" : "node scripts/postinstall.js"
 	},
 	"license": "MIT",
 	"repository": {
