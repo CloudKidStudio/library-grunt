@@ -2,20 +2,27 @@ module.exports = function(grunt)
 {
 	grunt.registerTask(
 		'default', 
-		'Default task to build all the library in minified, debug and combined modes', [
+		'Default task to build all the library in minified concat modes', [
 			'clean:all',
+			'build-dev', 
+			'build'
+		]
+	);
+
+	grunt.registerTask(
+		'build',
+		'Build the library in release mode', [
 			'jshint',
 			'uglify:release',
-			'replace:release',
-			'combine',
 			'sync-version'
 		]
 	);
 
 	grunt.registerTask(
-		'combine',
-		'Builds a combined library file without minification', [
-			'concat:development',
+		'build-dev',
+		'Build the library in dev mode', [
+			'jshint',
+			'concat_sourcemap:development',
 			'replace:development'
 		]
 	);

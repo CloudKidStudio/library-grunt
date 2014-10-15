@@ -33,6 +33,15 @@ module.exports = function(grunt, options)
 			// The deploy folder is the content that actually is for distribution
 			distFolder: path.join(cwd, 'dist'),
 
+			// The path to the theme
+			themePath: path.resolve(cwd, "../CloudKidTheme"),
+
+			// The path to the docs output folder
+			docsPath: path.join(cwd, 'docs'),
+
+			// The source path
+			sourcePath: path.join(cwd, 'src'),
+
 			// Save the current working directory
 			cwd: cwd
 		}

@@ -35,6 +35,12 @@ module.exports = function(grunt, options)
 	if (_.isUndefined(file.main) || !_.isArray(file.main))
 		grunt.fail.fatal('"main" is a required field in ' + filename);
 
+	if (!_.isUndefined(file.mainDebug) && !_.isArray(file.mainDebug))
+		grunt.fail.fatal('"mainDebug" needs to be an array in ' + filename);
+
+	// Default to debug
+	file.mainDebug = file.mainDebug || file.main;
+
 	// The build.json file to the output
 	file.file = filename;
 

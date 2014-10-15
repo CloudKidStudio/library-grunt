@@ -9,9 +9,6 @@ module.exports = {
 			'<%= build.main %>',
 			'<%= build.file %>'
 		],
-		tasks: [
-			'jshint',
-			'combine'
-		]
+		tasks: ['build-dev']
 	}
 };

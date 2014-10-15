@@ -1,6 +1,6 @@
 module.exports = {
 	options: {
-		base: 'docs',
+		base: '<%= docsPath %>',
 		message: 'Auto-generated commit'
     },
     src: '**/*'

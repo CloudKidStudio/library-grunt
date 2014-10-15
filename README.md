@@ -73,11 +73,12 @@ These are the list of grunt tasks for building the project.
 
 Task | Description
 ---|---
-**default** | Builds the minified, debug and combined versions of the library
+**default** | Builds the minified and combined versions of the library
+**build** | Release build of the library
+**build-dev** | Build the combined version of the library
 **dev** | This watches source files and auto-rebuilds whenever there's a change
-**combine** | This builds the library in combine mode by simply concatinating all the files
 **clean-all** | Delete all generated build files and delete components directory
-**docs** | Generate the documentation (requires [CloudKidTheme](http://github.com/CloudKidStudio/CloudKidTheme)
+**docs** | Generate the documentation (recommended theme [CloudKidTheme](http://github.com/CloudKidStudio/CloudKidTheme)
 **docs-live** | Generate the documentation and commit it to _gh-pages_ branch of this the current Git repository
 **sync-version** | Automatically updates the version and main fields in **bower.json**
 
@@ -144,3 +145,15 @@ module.exports = function(grunt)
 ### options.autoInit
 
 A _boolean_ defaults to true. If grunt.initConfig() is automatically called. 
+
+### options.themePath
+
+_string_ defaults to "../CloudKidTheme" The path to the YUI docs theme.
+
+### options.docsPath
+
+_string_ defaults to "docs" The path to the docs output folder.
+
+### options.sourcePath
+
+_string_ defaults to "src" The path to the source file for documentation.

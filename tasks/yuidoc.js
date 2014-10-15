@@ -7,10 +7,10 @@ module.exports = {
 		options: {
 			linkNatives: true,
 			attributesEmit: true,
-			helpers: ["../CloudKidTheme/path.js"],
-			paths: 'src',
-			themedir: '../CloudKidTheme',
-			outdir: 'docs'
+			helpers: ["<%= themePath %>/path.js"],
+			paths: '<%= sourcePath %>',
+			themedir: '<%= themePath %>',
+			outdir: '<%= docsPath %>'
 		}
 	}
 };

@@ -5,14 +5,7 @@ module.exports = {
 		replacements: [
 			{ from: "DEBUG", to: "true" },
 			{ from: "RELEASE", to: "false" },
-			{ from: "${version}", to: "<%= build.version %>"}
-		]
-	},
-	release : {
-		src: ['<%= distFolder %>/<%= build.output %>.min.js'],
-		overwrite: true,
-		replacements: [
-			{ from: "${version}", to: "<%= build.version %>"}
+			{ from: "VERSION", to: '"<%= build.version %>"'}
 		]
 	}
 };

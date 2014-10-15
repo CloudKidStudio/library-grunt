@@ -4,5 +4,5 @@ module.exports = {
 	all: ['<%= distFolder %>/*.js'],
 
 	// Clean the documentation
-	docs: ['docs']
+	docs: ['<%= docsPath %>']
 };
