@@ -22,7 +22,7 @@ module.exports = function(grunt)
 		'build-dev',
 		'Build the library in dev mode', [
 			'jshint',
-			'concat_sourcemap:development',
+			'concat:development',
 			'replace:development'
 		]
 	);

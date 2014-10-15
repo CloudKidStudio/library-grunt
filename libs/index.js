@@ -42,6 +42,9 @@ module.exports = function(grunt, options)
 			// The source path
 			sourcePath: path.join(cwd, 'src'),
 
+			// If we should generate source maps
+			sourceMaps: false,
+
 			// Save the current working directory
 			cwd: cwd
 		}

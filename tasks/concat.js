@@ -1,9 +1,10 @@
 module.exports = {
-	development: {
-		src: ['<%= build.main %>'],
-		dest: '<%= distFolder %>/<%= build.output %>.js'
-	},
 	options: {
+		sourceMap: '<%= sourceMaps %>',
 		banner: '/*! <%= build.name %> <%= build.version %> */\n'
+	},
+	development: {
+		src: ['<%= build.mainDebug %>'],
+		dest: '<%= distFolder %>/<%= build.output %>.js'
 	}
 };

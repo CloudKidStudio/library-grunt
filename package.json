@@ -1,6 +1,6 @@
 {
 	"name": "grunt-library-builder",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"description": "Tasks and scaffolding for a library project",
 	"main": "./libs/index.js",
 	"author": {
@@ -26,7 +26,7 @@
 		"grunt-contrib-yuidoc": "~0.5.2",
 		"grunt-gh-pages": "~0.9.1",
 		"underscore-contrib": "~0.3.0",
-		"grunt-concat-sourcemap": "~0.4.3",
+		"grunt-contrib-concat": "~0.5.0",
 		"prompt": "~0.2.13"
 	},
 	"keywords": [

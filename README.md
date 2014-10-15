@@ -157,3 +157,7 @@ _string_ defaults to "docs" The path to the docs output folder.
 ### options.sourcePath
 
 _string_ defaults to "src" The path to the source file for documentation.
+
+### options.sourceMaps
+
+_boolean_ defaults to false Generate sourcemaps for the built libraries.
