@@ -1,5 +1,7 @@
 # Grunt Library Builder
 
+[![Dependency Status](https://david-dm.org/CloudKidStudio/grunt-library-builder.svg)](https://david-dm.org/CloudKidStudio/grunt-library-builder)
+
 Grunt Library Builder is a Node plugin which provides initial project scaffolding and common build tasks for creating JavaScript libraries. The plugin requires [Grunt](http://gruntjs.com/) to be installed on the local system in order to build. 
 
 ## Requirements
