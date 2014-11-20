@@ -1,6 +1,6 @@
 {
-	"name": "grunt-library-builder",
-	"version": "0.2.2",
+	"name": "library-grunt",
+	"version": "0.3.0",
 	"description": "Tasks and scaffolding for a library project",
 	"main": "./libs/index.js",
 	"author": {
@@ -8,13 +8,13 @@
 		"email": "matt@cloudkid.com"
 	},
 	"scripts": {
-		"preinstall": "node scripts/preinstall.js",
-		"postinstall" : "node scripts/postinstall.js"
+		"test": "grunt test --verbose",
+		"scaffold": "node ./scripts/scaffold.js"
 	},
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/CloudKidStudio/grunt-library-builder"
+		"url": "https://github.com/CloudKidStudio/library-grunt"
 	},
 	"dependencies": {
 		"grunt-contrib-jshint": "~0.10.0",
@@ -23,6 +23,7 @@
 		"grunt-contrib-watch": "~0.6.1",
 		"grunt-text-replace": "~0.3.12",
 		"load-grunt-config": "~0.16.0",
+		"grunt-simple-version": "~0.1.0",
 		"grunt-contrib-yuidoc": "~0.5.2",
 		"grunt-gh-pages": "~0.9.1",
 		"underscore-contrib": "~0.3.0",
@@ -38,7 +39,7 @@
 	],
 	"readmeFilename": "README.md",
 	"bugs": {
-		"url": "https://github.com/CloudKidStudio/grunt-library-builder/issues"
+		"url": "https://github.com/CloudKidStudio/library-grunt/issues"
 	},
-	"homepage": "https://github.com/CloudKidStudio/grunt-library-builder"
+	"homepage": "https://github.com/CloudKidStudio/library-grunt"
 }

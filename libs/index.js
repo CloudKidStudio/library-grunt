@@ -2,8 +2,9 @@ module.exports = function(grunt, options)
 {
 	// The root plugin directory
 	var path = require('path'),
-		loader = require('load-grunt-config'),
-		options = options || {};
+		loader = require('load-grunt-config');
+		
+	options = options || {};
 
 	// We need to load the local grunt plugins
 	var cwd = process.cwd();

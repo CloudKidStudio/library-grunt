@@ -1,8 +1,8 @@
-# Grunt Library Builder
+# Library Grunt
 
-[![Dependency Status](https://david-dm.org/CloudKidStudio/grunt-library-builder.svg)](https://david-dm.org/CloudKidStudio/grunt-library-builder)
+[![Dependency Status](https://david-dm.org/CloudKidStudio/library-grunt.svg)](https://david-dm.org/CloudKidStudio/library-grunt) [![Build Status](https://travis-ci.org/CloudKidStudio/library-grunt.svg)](https://travis-ci.org/CloudKidStudio/library-grunt)
 
-Grunt Library Builder is a Node plugin which provides initial project scaffolding and common build tasks for creating JavaScript libraries. The plugin requires [Grunt](http://gruntjs.com/) to be installed on the local system in order to build. 
+Library Grunt is a Node plugin which provides initial project scaffolding and common build tasks for creating JavaScript libraries. The plugin requires [Grunt](http://gruntjs.com/) to be installed on the local system in order to build. 
 
 ## Requirements
 
@@ -26,16 +26,24 @@ mkdir MyProject && cd MyProject
 The installation of the plugin requires installing Grunt first and then the plugin. This will create an empty project template structure which you can start to customize.
 
 ```shell
-npm install grunt grunt-library-builder
+npm install grunt library-grunt
 ```
 
-### 3. Change Project Information
+### 3. Scaffolding Project
+
+Create the initial project scaffolding needed to setup a project.
+
+```shell
+npm run-script library-grunt scaffold
+```
+
+### 4. Change Project Information
 
 Edit the **build.json** file to update the project name, output file name, URL, description and list of files.
 
 ## Adding Dependencies
 
-Grunt Library Builder is designed to easily include define dependencies for your library.
+Library Grunt is designed to easily include define dependencies for your library.
 
 Modify the **bower.json** file to include additional libraries into your project. For more information about using Bower please visit the [website](http://bower.io). For instance, if you wanted to include [CreateJS](http://createjs.com), **bower.json** might look like this. Note that the _version_ and _main_ fields are updated automatically from the **build.json**, no need to change these manually.
 
@@ -131,12 +139,12 @@ Structure | Description
 
 ## Plugin Options
 
-The Grunt Library Builder plugin can accept additional options. Here's an example to add additional arguments:
+The Library Grunt plugin can accept additional options. Here's an example to add additional arguments:
 
 ```js
 module.exports = function(grunt)
 {
-	var config = require('grunt-library-builder')(grunt, {
+	var config = require('library-grunt')(grunt, {
 		autoInit : false
 	});
 
