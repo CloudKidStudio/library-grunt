@@ -13,8 +13,8 @@ module.exports = function(grunt)
 		'build',
 		'Build the library in release mode', [
 			'jshint',
-			'uglify:release',
-			'sync-version'
+			'uglify',
+			'less'
 		]
 	);
 
@@ -22,8 +22,8 @@ module.exports = function(grunt)
 		'build-dev',
 		'Build the library in dev mode', [
 			'jshint',
-			'concat:development',
-			'replace:development'
+			'concat',
+			'replace'
 		]
 	);
 
@@ -54,26 +54,5 @@ module.exports = function(grunt)
 			'yuidoc',
 			'gh-pages'
 		]
-	);
-
-	grunt.registerTask(
-		'sync-version',
-		'Update the bower file with the build version',
-		function()
-		{	
-			// Get the paths and files
-			var bowerPath = process.cwd() + '/bower.json',
-				bower = grunt.file.readJSON(bowerPath),
-				build = grunt.file.readJSON(process.cwd() + '/build.json');
-
-			// Update the bower output
-			bower.main = 'dist/' + build.output + '.min.js';
-
-			// Update the bower version
-			bower.version = build.version;
-
-			// Write the bower file
-			grunt.file.write(bowerPath, JSON.stringify(bower, null, "\t"));
-		}
 	);
 };

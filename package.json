@@ -1,6 +1,6 @@
 {
 	"name": "library-grunt",
-	"version": "0.3.1",
+	"version": "0.4.0",
 	"description": "Tasks and scaffolding for a library project",
 	"main": "./libs/index.js",
 	"author": {
@@ -25,8 +25,9 @@
 		"load-grunt-config": "~0.16.0",
 		"grunt-simple-version": "~0.1.0",
 		"grunt-contrib-yuidoc": "~0.5.2",
+		"grunt-contrib-less": "~0.12.0",
 		"grunt-gh-pages": "~0.9.1",
-		"underscore-contrib": "~0.3.0",
+		"lodash": "~2.4.1",
 		"grunt-contrib-concat": "~0.5.0",
 		"prompt": "~0.2.14"
 	},

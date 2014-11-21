@@ -12,8 +12,9 @@ module.exports = {
 				},
 				dead_code: true
 			},
-			banner: '/*! <%= build.name %> <%= build.version %> */\n',
-			sourceMap: '<%= sourceMap %>'
+			sourceMap: '<%= sourceMap %>',
+			banner: '/*! <%= build.name %> <%= build.version %> */\n!function(){"use strict";',
+			footer: '}();'
 		}
 	}
 };

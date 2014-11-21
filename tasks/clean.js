@@ -2,7 +2,7 @@ module.exports = {
 
 	// Remove all the build files
 	all: [
-		'<%= distFolder %>/*.js', 
+		'<%= distFolder %>/*.js',
 		'<%= distFolder %>/*.map'
 	],
 

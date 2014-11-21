@@ -6,7 +6,11 @@
 module.exports = function(grunt, options)
 {	
 	// Use underscore utilities
-	var _ = require('underscore-contrib');
+	var _ = require('lodash');
+
+	// Filter an array of files and only return CSS and LESS files
+	var isCSS = function(file){ return /\.(less|css)$/.test(file); };
+	var isJS = function(file){ return /\.js$/.test(file); };
 
 	// The name of the build file
 	var filename = options.cwd + '/' + (options.buildFile || 'build.json');
@@ -37,6 +41,39 @@ module.exports = function(grunt, options)
 
 	if (!_.isUndefined(file.mainDebug) && !_.isArray(file.mainDebug))
 		grunt.fail.fatal('"mainDebug" needs to be an array in ' + filename);
+
+	// Get the css files
+	if (_.isUndefined(file.css))
+	{
+		file.css = _.filter(file.main, isCSS);
+	}
+
+	// Only populate main with JS files
+	file.main = _.filter(file.main, isJS);
+
+	// Check for modules
+	if (file.modules)
+	{
+		_.each(file.modules, function(module, name){
+			
+			// If the module is a list of files
+			// then conform is to the more verbose format
+			if (Array.isArray(module))
+			{
+				module = {
+					output: name,
+					main: module
+				};
+			}
+
+			// Get any CSS files for this module
+			module.css = _.filter(module.main, isCSS);
+			module.main = _.filter(module.main, isJS);
+
+			// Update module
+			file.modules[name] = module;
+		});
+	}
 
 	// Default to debug
 	file.mainDebug = file.mainDebug || file.main;
