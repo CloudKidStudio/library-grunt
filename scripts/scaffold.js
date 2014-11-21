@@ -60,11 +60,10 @@ function scaffold(file, content, callback)
 function gruntRun()
 {
 	var isWindows = process.platform === 'win32';
-	var cwd = path.dirname(buildFile);
 	var spawn = require('child_process').spawn;
 	var grunt = isWindows ?
-		spawn(process.env.comspec, ['/c', 'grunt'], { cwd: cwd }):
-		spawn('grunt', [], { cwd: cwd });
+		spawn(process.env.comspec, ['/c', 'grunt'], { cwd: base }):
+		spawn('grunt', [], { cwd: base });
 
 	grunt.stdout.on('data', function (data) {
 		process.stdout.write(data);
@@ -77,6 +76,17 @@ function gruntRun()
 	grunt.on('error', function(err){
 		console.log("Grunt run error", err);
 	});
+}
+
+/**
+*  Write a JSON file
+*  @method  writeJSON
+*  @param  {string} file Path to a file
+*  @param  {object} obj  JSON object to encode
+*/
+function writeJSON(file, obj)
+{
+	fs.writeFileSync(file, JSON.stringify(obj, null, "\t"));
 }
 
 // Only scaffold the project if no Gruntfile is available
@@ -124,37 +134,18 @@ scaffold("Gruntfile.js", null, function(file){
 		{
 			// Get the build file as an object
 			var build = JSON.parse(fs.readFileSync(buildFile));
+			writeJSON(buildFile, _.extend(build, result));
 
-			// Update the build file with the new name
-			fs.writeFileSync(buildFile, JSON.stringify(_.extend(build, result), null, "\t"));
-
-			// Get the build file as an object
+			// Get the bower file as an object
 			var bower = JSON.parse(fs.readFileSync(bowerFile));
 			bower.name = result.name;
 			bower.version = result.version;
 			bower.main = 'dist/'+result.output+'.min.js';
-
-			// Update the build file with the new name
-			fs.writeFileSync(bowerFile, JSON.stringify(bower, null, "\t"));
+			writeJSON(bowerFile, bower);
 
 			var pack = JSON.parse(fs.readFileSync(packageFile));
 			pack.version = result.version;
-
-			// Update the build file with the new name
-			fs.writeFileSync(packageFile, JSON.stringify(pack, null, "\t"));
-
-			// Get the build file as an object
-			var build = fs.readFileSync(buildfile);
-			build = JSON.parse(build);
-
-			fs.writeFile(
-				buildfile, 
-				JSON.stringify(
-					_.extend(build, result), null, "\t"
-				), 
-				gruntRun
-			);
-			return;
+			writeJSON(packageFile, pack);
 		}
 		// Build the library
 		gruntRun();
