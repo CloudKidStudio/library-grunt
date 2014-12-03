@@ -36,16 +36,16 @@ module.exports = function(grunt, options)
 			distFolder: distFolder,
 
 			// The path to the theme
-			themePath: options.themePath || path.resolve(libraryDir, "../CloudKidTheme"),
+			themePath: options.themePath || '../CloudKidTheme',
 
 			// The path to the docs output folder
-			docsPath: options.docsPath || path.join(libraryDir, 'docs'),
+			docsPath: options.docsPath || 'docs',
 
 			// The path to the modules output folder
 			modulesPath: modulesPath,
 
 			// The source path
-			sourcePath: options.sourcePath || path.join(libraryDir, 'src'),
+			sourcePath: options.sourcePath || 'src',
 
 			// If we should generate source maps
 			sourceMaps: _.isUndefined(options.sourceMaps) ? false : options.sourceMaps,
