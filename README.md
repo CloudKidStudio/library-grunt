@@ -88,7 +88,9 @@ Task | Description
 **clean-all** | Delete all generated build files and delete components directory
 **docs** | Generate the documentation (recommended theme [CloudKidTheme](http://github.com/CloudKidStudio/CloudKidTheme)
 **docs-live** | Generate the documentation and commit it to _gh-pages_ branch of this the current Git repository
-**sync-version** | Automatically updates the version and main fields in **bower.json**
+**test** | Run any tests in the **test** folder using QUnit and PhantomJS
+**test-live** | Run the test folder within a web-browser running a Node server
+**examples** | Run the examples folder within a web-browser running a Node server
 
 ## Build File
 
@@ -128,12 +130,14 @@ if (RELEASE)
 Structure | Description
 --- | ---
 **./dist/** | Contains the distribution builds of the library
+**./examples/** | The collection of examples
 **./node_modules/** | The Node plugins required for the build process; this directory should be ignored by the versioning system
 **./src/** | The source JavaScript needed to build the library
 **./bower.json** | The list of Bower dependencies
 **./build.json** | See above, the list of source files to build and meta information about the project
 **./Gruntfile.js** | Contains the Grunt automation tasks
 **./package.json** | The list of Node dependencies
+**./test/** | The collection of QUnit tests
 
 ## Plugin Options
 
@@ -154,13 +158,13 @@ module.exports = function(grunt)
 
 A _boolean_ defaults to true. If grunt.initConfig() is automatically called. 
 
-### options.themePath
-
-_string_ defaults to "../CloudKidTheme" The path to the YUI docs theme.
-
 ### options.docsPath
 
 _string_ defaults to "docs" The path to the docs output folder.
+
+### options.examplesPath
+
+_string_ defaults to "examples" The folder which contains the library examples.
 
 ### options.sourcePath
 
@@ -169,3 +173,15 @@ _string_ defaults to "src" The path to the source file for documentation.
 ### options.sourceMaps
 
 _boolean_ defaults to false Generate sourcemaps for the built libraries.
+
+### options.testPath
+
+_string_ defaults to "test" The folder which contains the QUnit tests.
+
+### options.themePath
+
+_string_ defaults to "../CloudKidTheme" The path to the YUI docs theme.
+
+### options.bowerPath
+
+_string_ defaults to "components" The default path for the Bower components

@@ -1,6 +1,6 @@
 {
 	"name": "library-grunt",
-	"version": "0.4.2",
+	"version": "0.5.0",
 	"description": "Tasks and scaffolding for a library project",
 	"main": "./libs/index.js",
 	"author": {
@@ -29,7 +29,10 @@
 		"grunt-gh-pages": "~0.9.1",
 		"lodash": "~2.4.1",
 		"grunt-contrib-concat": "~0.5.0",
-		"prompt": "~0.2.14"
+		"prompt": "~0.2.14",
+		"grunt-contrib-qunit": "~0.5.2",
+		"grunt-bower-install-simple": "~1.1.0",
+		"grunt-contrib-connect": "~0.9.0"
 	},
 	"keywords": [
 		"gruntplugin",

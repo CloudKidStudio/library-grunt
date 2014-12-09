@@ -47,6 +47,15 @@ module.exports = function(grunt, options)
 			// The source path
 			sourcePath: options.sourcePath || 'src',
 
+			// Path to the QUnit tests
+			testPath: options.testPath || 'test',
+
+			// Path to the examples folder
+			examplesPath: options.examplesPath || 'examples',
+
+			// Path to the bower components checkout (used for tests and examples)
+			bowerPath: options.bowerPath || 'components',
+
 			// If we should generate source maps
 			sourceMaps: _.isUndefined(options.sourceMaps) ? false : options.sourceMaps,
 

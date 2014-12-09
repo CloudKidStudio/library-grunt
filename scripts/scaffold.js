@@ -33,22 +33,23 @@ function scaffoldDir(dir)
 *  Create a file if it doesn't exist
 *  @method create
 *  @param {String} file The file path
-*  @param {String|Object} content The default content for file
+*  @param {String|Object} [srcFile=null] The default content for file
 *  @param {function} callback The callback function when done
 */
-function scaffold(file, content, callback)
+function scaffold(targetFile, srcFile, callback)
 {
-	var source = path.join(scaffoldBase, file);
-	var target = path.join(base, file);
+	srcFile = srcFile || targetFile;
+	var source = path.join(scaffoldBase, srcFile);
+	var target = path.join(base, targetFile);
 
 	if (!fs.existsSync(target))
 	{
-		if (!content && !fs.existsSync(source))
+		if (!fs.existsSync(source))
 		{
 			throw "Source file doesn't exist '" + source + "'";
 		}
-		fs.writeFileSync(target, content || fs.readFileSync(source));
-		console.log("  " + file + " ... added");
+		fs.writeFileSync(target, fs.readFileSync(source));
+		console.log("  " + targetFile + " ... added");
 		if (callback) callback(target);
 	}
 }
@@ -94,14 +95,18 @@ scaffold("Gruntfile.js", null, function(file){
 	
 	// Create the required folders
 	scaffoldDir("src"); 
-	scaffoldDir("dist"); 
+	scaffoldDir("dist");
+	scaffoldDir("test");
+	scaffoldDir("examples");
 
 	// Copy the required files
 	scaffold("build.json");
 	scaffold("bower.json");
 	scaffold("package.json");
+	scaffold(".travis.yml", "travis.yml");
 	scaffold("src/main.js");
-	scaffold(".gitignore", "node_modules\ndocs");
+	scaffold("test/index.html");
+	scaffold(".gitignore", "gitignore");
 
 	prompt.start();
 	prompt.get([{

@@ -4,5 +4,8 @@
 	"dependencies": {
 		"grunt": "~0.4.5",
 		"library-grunt": "*"
+	},
+	"scripts": {
+		"test": "grunt test --verbose"
 	}
 }

@@ -1,5 +1,18 @@
 {
     "name": "Library",
     "version": "0.0.1",
-    "main": "dist/library.min.js"
+    "main": "dist/library.min.js",
+	"devDependencies": {
+		"qunit": "*",
+		"bind-polyfill": "*"
+	},
+	"ignore": [
+		"Gruntfile.js",
+		"build.json",
+		"tasks",
+		"examples",
+		"docs",
+		"src",
+		"test"
+	]
 }
