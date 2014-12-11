@@ -68,7 +68,7 @@ module.exports = function(grunt, options)
 
 			// Get any CSS files for this module
 			module.css = _.filter(module.main, isCSS);
-			module.main = _.filter(module.main, isJS);
+			module.js = _.filter(module.main, isJS);
 
 			// Update module
 			file.modules[name] = module;
