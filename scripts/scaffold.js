@@ -8,7 +8,7 @@ var fs = require('fs'),
 	base = path.resolve(__dirname, '..', '..', '..'),
 	bowerFile = path.join(base, 'bower.json'),
 	packageFile = path.join(base, 'package.json'),
-	buildFile = path.join(base, 'build.json');
+	buildFile = path.join(base, 'library.json');
 
 // The root project folder
 var scaffoldBase = path.join(__dirname, '..', 'scaffold');
@@ -100,7 +100,7 @@ scaffold("Gruntfile.js", null, function(file){
 	scaffoldDir("examples");
 
 	// Copy the required files
-	scaffold("build.json");
+	scaffold("library.json");
 	scaffold("bower.json");
 	scaffold("package.json");
 	scaffold(".travis.yml", "travis.yml");

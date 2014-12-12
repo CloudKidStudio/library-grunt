@@ -1,6 +1,6 @@
 /**
-*  Encapsulate the build.json format functionality
-*  this converts the build.json file into useable file lists
+*  Encapsulate the library.json format functionality
+*  this converts the library.json file into useable file lists
 *  for running tasks on.
 */
 module.exports = function(grunt, options)
@@ -13,7 +13,7 @@ module.exports = function(grunt, options)
 	var isJS = function(file){ return /\.js$/.test(file); };
 
 	// The name of the build file
-	var filename = options.cwd + '/' + (options.buildFile || 'build.json');
+	var filename = options.cwd + '/' + (options.buildFile || 'library.json');
 
 	// Check for build file
 	if (!grunt.file.exists(filename))
@@ -81,7 +81,7 @@ module.exports = function(grunt, options)
 	// Default to debug
 	file.mainDebug = file.mainDebug || file.main;
 
-	// The build.json file to the output
+	// The library.json file to the output
 	file.file = filename;
 
 	return file;

@@ -1,6 +1,6 @@
 module.exports = {
 	options : {
-		'build.json' : 'version',
+		'library.json' : 'version',
 		'bower.json' : 'version'
 	}
 };
