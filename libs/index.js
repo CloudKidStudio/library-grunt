@@ -108,15 +108,22 @@ module.exports = function(grunt, options)
 	// If we should called initConfig right away
 	var autoInit = _.isUndefined(options.autoInit) ? true : !!options.autoInit;
 
-	// Dynamically add the CSS
-	if (build.css.length)
-	{
-		config.less.files['<%= distFolder %>/<%= build.output %>.css'] = '<%= build.css %>';
-	}
-
 	// Merge the configs
 	var config = _.extend(baseConfig, libraryConfig);
 
+	// Dynamically add the CSS
+	if (build.css)
+	{
+		config.less.release.files['<%= distFolder %>/<%= build.output %>.min.css'] = 
+			'<%= build.css %>';
+	}
+
+	if (build.cssDebug)
+	{
+		config.less.development.files['<%= distFolder %>/<%= build.output %>.css'] = 
+			'<%= build.cssDebug %>';
+	}
+	
 	// Process the modules
 	if (build.modules)
 	{

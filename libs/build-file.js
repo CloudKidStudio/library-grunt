@@ -42,14 +42,15 @@ module.exports = function(grunt, options)
 	if (!_.isUndefined(file.mainDebug) && !_.isArray(file.mainDebug))
 		grunt.fail.fatal('"mainDebug" needs to be an array in ' + filename);
 
+	// The js list of files
+	var main = _.filter(file.main, isJS);
+
 	// Get the css files
-	if (_.isUndefined(file.css))
-	{
-		file.css = _.filter(file.main, isCSS);
-	}
+	file.css = _.filter(file.main, isCSS);
+	file.cssDebug = _.filter(file.mainDebug || file.main, isCSS);
 
 	// Only populate main with JS files
-	file.main = _.filter(file.main, isJS);
+	file.main = main;
 
 	// Check for modules
 	if (file.modules)
@@ -66,9 +67,11 @@ module.exports = function(grunt, options)
 				};
 			}
 
-			// Get any CSS files for this module
+			// Filter the list of files
 			module.css = _.filter(module.main, isCSS);
+			module.cssDebug = _.filter(module.mainDebug || module.main, isCSS);
 			module.js = _.filter(module.main, isJS);
+			module.jsDebug = _.filter(module.mainDebug || module.main, isJS);
 
 			// Update module
 			file.modules[name] = module;

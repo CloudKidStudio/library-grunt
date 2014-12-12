@@ -6,5 +6,11 @@ module.exports = {
 			cleancss: true
 		},
 		files: {}
+	},
+	development: {
+		options: {
+			banner: '/*! <%= build.name %> <%= build.version %> */'
+		},
+		files: {}
 	}
 };

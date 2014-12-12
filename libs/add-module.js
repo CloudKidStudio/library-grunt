@@ -17,15 +17,16 @@ module.exports = function(config, name, module)
 	{
 		// The Grunt property for the js files
 		var js = '<%= build.modules.' + name + '.js %>';
+		var jsDebug = '<%= build.modules.' + name + '.jsDebug %>';
 
 		// The paths to output js files
-		var outputJS = '<%= modulesPath %>/' + module.output + '.min.js';
-		var outputJSDebug = '<%= modulesPath %>/' + module.output + '.js';
-		var outputSourceMap = '<%= modulesPath %>/' + module.output + '.js.map';
+		var jsFile = '<%= modulesPath %>/' + module.output + '.min.js';
+		var jsDebugFile = '<%= modulesPath %>/' + module.output + '.js';
+		var sourceMapFile = '<%= modulesPath %>/' + module.output + '.js.map';
 
 		// Add the replacement tasks
 		config.replace[name] = {
-			src: [outputJSDebug],
+			src: [jsDebugFile],
 			overwrite: true,
 			replacements: '<%= replace.development.replacements %>'
 		};
@@ -34,19 +35,19 @@ module.exports = function(config, name, module)
 		config.jshint.all.push(js);
 
 		// Add uglify task
-		config.uglify.release.files[outputJS] = js;
+		config.uglify.release.files[jsFile] = js;
 
 		// Watch files
 		config.watch.js.files.push(js);
 
 		// Concat for the debug release
 		config.concat[name] = {
-			src: [js],
-			dest: outputJSDebug
+			src: [jsDebug],
+			dest: jsDebugFile
 		};
 
 		// Add files to clean
-		config.clean.all.push(outputJS, outputJSDebug, outputSourceMap);
+		config.clean.all.push(jsFile, jsDebugFile, sourceMapFile);
 	}
 
 	// If there's corresponding CSS for this module
@@ -55,12 +56,16 @@ module.exports = function(config, name, module)
 	{
 		// The Grunt property for the CSS files
 		var css = '<%= build.modules.' + name + '.css %>';
+		var cssDebug = '<%= build.modules.' + name + '.cssDebug %>';
 
 		// The path to output the CSS
-		var outputCSS = '<%= modulesPath %>/' + module.output + '.css';
+		var cssFile = '<%= modulesPath %>/' + module.output + '.min.css';
+		var cssDebugFile = '<%= modulesPath %>/' + module.output + '.css';
 
-		// The list of files
-		config.less.release.files[outputCSS] = css;
-		config.clean.all.push(outputCSS);
+		// Add to the list of tasks
+		config.less.release.files[cssFile] = css;
+		config.less.development.files[cssDebugFile] = cssDebug;
+		config.clean.all.push(cssFile);
+		config.clean.all.push(cssDebugFile);
 	}
 };
