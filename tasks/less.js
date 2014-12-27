@@ -3,7 +3,7 @@ module.exports = {
 		options: {
 			banner: '/*! <%= build.name %> <%= build.version %> */',
 			sourceMap: '<%= sourceMaps %>',
-			cleancss: true
+			compress: true
 		},
 		files: {}
 	},
