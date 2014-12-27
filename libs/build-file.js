@@ -79,7 +79,7 @@ module.exports = function(grunt, options)
 	}
 
 	// Default to debug
-	file.mainDebug = file.mainDebug || file.main;
+	file.mainDebug = _.filter(file.mainDebug || file.main, isJS);
 
 	// The library.json file to the output
 	file.file = filename;
