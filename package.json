@@ -1,6 +1,6 @@
 {
 	"name": "library-grunt",
-	"version": "0.6.1",
+	"version": "0.6.2",
 	"description": "Tasks and scaffolding for a library project",
 	"main": "./libs/index.js",
 	"author": {
@@ -17,17 +17,17 @@
 		"url": "https://github.com/CloudKidStudio/library-grunt"
 	},
 	"dependencies": {
-		"grunt-contrib-jshint": "~0.10.0",
+		"grunt-contrib-jshint": "~0.11.0",
 		"grunt-contrib-uglify": "~0.7.0",
 		"grunt-contrib-clean": "~0.6.0",
 		"grunt-contrib-watch": "~0.6.1",
 		"grunt-text-replace": "~0.4.0",
 		"load-grunt-config": "~0.16.0",
 		"grunt-simple-version": "~0.2.0",
-		"grunt-contrib-yuidoc": "~0.5.2",
+		"grunt-contrib-yuidoc": "~0.7.0",
 		"grunt-contrib-less": "~1.0.0",
 		"grunt-gh-pages": "~0.9.1",
-		"lodash": "~2.4.1",
+		"lodash": "~3.0.0",
 		"grunt-contrib-concat": "~0.5.0",
 		"prompt": "~0.2.14",
 		"grunt-contrib-qunit": "~0.5.2",

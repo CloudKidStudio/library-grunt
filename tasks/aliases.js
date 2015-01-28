@@ -4,7 +4,7 @@ module.exports = function(grunt)
 		'default', 
 		'Default task to build all the library in minified concat modes', [
 			'clean:all',
-			'build-dev', 
+			'build-debug', 
 			'build'
 		]
 	);
@@ -19,7 +19,7 @@ module.exports = function(grunt)
 	);
 
 	grunt.registerTask(
-		'build-dev',
+		'build-debug',
 		'Build the library in dev mode', [
 			'jshint',
 			'concat',

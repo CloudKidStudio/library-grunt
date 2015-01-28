@@ -83,7 +83,7 @@ Task | Description
 ---|---
 **default** | Builds the minified and combined versions of the library
 **build** | Release build of the library
-**build-dev** | Build the combined version of the library
+**build-debug** | Build the combined version of the library
 **dev** | This watches source files and auto-rebuilds whenever there's a change
 **clean-all** | Delete all generated build files and delete components directory
 **docs** | Generate the documentation (recommended theme [CloudKidTheme](http://github.com/CloudKidStudio/CloudKidTheme)

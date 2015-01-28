@@ -9,6 +9,6 @@ module.exports = {
 			'<%= build.main %>',
 			'<%= build.file %>'
 		],
-		tasks: ['build-dev']
+		tasks: ['build-debug']
 	}
 };
