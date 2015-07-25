@@ -5,6 +5,7 @@ module.exports = {
 	},
 	development: {
 		src: ['<%= build.mainDebug %>'],
-		dest: '<%= distFolder %>/<%= build.output %>.js'
+		dest: '<%= distFolder %>/<%= build.output %>.js',
+		nonull: true
 	}
 };

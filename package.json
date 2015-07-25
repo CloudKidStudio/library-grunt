@@ -1,6 +1,6 @@
 {
 	"name": "library-grunt",
-	"version": "0.6.2",
+	"version": "0.6.3",
 	"description": "Tasks and scaffolding for a library project",
 	"main": "./libs/index.js",
 	"author": {

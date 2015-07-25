@@ -43,7 +43,8 @@ module.exports = function(config, name, module)
 		// Concat for the debug release
 		config.concat[name] = {
 			src: [jsDebug],
-			dest: jsDebugFile
+			dest: jsDebugFile,
+			nonull: true
 		};
 
 		// Add files to clean
