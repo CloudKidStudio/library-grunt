@@ -158,6 +158,10 @@ module.exports = function(grunt)
 
 A _boolean_ defaults to true. If grunt.initConfig() is automatically called. 
 
+### options.distFolder
+
+_string_ defaults to "dist" The path to the built library folder
+
 ### options.docsPath
 
 _string_ defaults to "docs" The path to the docs output folder.
@@ -165,6 +169,10 @@ _string_ defaults to "docs" The path to the docs output folder.
 ### options.examplesPath
 
 _string_ defaults to "examples" The folder which contains the library examples.
+
+### options.modulesPath
+
+_string_ defaults to "dist/modules" The folder which contains additional modules for this library.
 
 ### options.sourcePath
 
