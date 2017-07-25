@@ -1,4 +1,4 @@
-# Library Grunt [![Dependency Status](https://david-dm.org/CloudKidStudio/library-grunt.svg)](https://david-dm.org/CloudKidStudio/library-grunt) [![Build Status](https://travis-ci.org/CloudKidStudio/library-grunt.svg)](https://travis-ci.org/CloudKidStudio/library-grunt) [![npm version](https://badge.fury.io/js/library-grunt.svg)](http://badge.fury.io/js/library-grunt)
+# Library Grunt [![Dependency Status](https://david-dm.org/CloudKidStudio/library-grunt.svg)](https://david-dm.org/CloudKidStudio/library-grunt) [![Build Status](https://travis-ci.org/CloudKidStudio/library-grunt.svg)](https://travis-ci.org/CloudKidStudio/library-grunt) [![npm version](https://badge.fury.io/js/library-grunt.svg)](http://badge.fury.io/js/library-grunt)  ![Not maintained](https://img.shields.io/badge/maintained%3F-no!-red.svg?style=flat)
 
 Library Grunt is a Node plugin which provides initial project scaffolding and common build tasks for creating JavaScript libraries. The plugin requires [Grunt](http://gruntjs.com/) to be installed on the local system in order to build. 
 
